@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\itai\\source\\repos\\IDF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\itai\\source\\repos\\idf\\idf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|C:\\Users\\itai\\source\\repos\\IDF\\idf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\itai\\source\\repos\\idf\\idf\\hamasotganization\\hamas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\hamasotganization\\hamas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\itai\\source\\repos\\idf\\idf\\hamasotganization\\terrorist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\hamasotganization\\terrorist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,13 +30,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Terrorist.cs",
+              "DocumentMoniker": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\HamasOtganization\\Terrorist.cs",
+              "RelativeDocumentMoniker": "IDF\\HamasOtganization\\Terrorist.cs",
+              "ToolTip": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\HamasOtganization\\Terrorist.cs",
+              "RelativeToolTip": "IDF\\HamasOtganization\\Terrorist.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA5wB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T20:30:44.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Hamas.cs",
+              "DocumentMoniker": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\HamasOtganization\\Hamas.cs",
+              "RelativeDocumentMoniker": "IDF\\HamasOtganization\\Hamas.cs",
+              "ToolTip": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\HamasOtganization\\Hamas.cs",
+              "RelativeToolTip": "IDF\\HamasOtganization\\Hamas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T15:52:54.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\Program.cs",
               "RelativeDocumentMoniker": "IDF\\Program.cs",
-              "ToolTip": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\Program.cs",
-              "RelativeToolTip": "IDF\\Program.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAswA8AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\Program.cs*",
+              "RelativeToolTip": "IDF\\Program.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T13:13:32.183Z",
               "EditorCaption": ""

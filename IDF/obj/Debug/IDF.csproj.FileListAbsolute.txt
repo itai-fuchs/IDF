@@ -5,3 +5,4 @@ C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.csproj.AssemblyReference.cache
 C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.csproj.CoreCompileInputs.cache
 C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.exe
 C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.pdb
+C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.exe.config

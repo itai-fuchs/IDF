@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IDF.HamasOtganization
+{
+    internal static class Hamas
+    {
+
+         static string formation_date = "10/121987";
+        public static void Get_formation_date() { Console.WriteLine(formation_date); }
+
+        static string Current_commander = "Haled Mahshal";
+        public static void Get_Current_commander() { Console.WriteLine(Current_commander);}
+
+        public static List<Terrorist> Terrorist_list = new List<Terrorist>();
+        //public static List<Terrorist> Get_Terrorist_list() { return Terrorist_list;}
+
+  
+
+
+       
+    }
+}
