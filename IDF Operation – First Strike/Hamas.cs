@@ -10,6 +10,6 @@ namespace IDF_Operation___First_Strike
     {
         String Formation = "";
         String Commander = "";
-        List<String> AffiliatedTerrorists = ["","",""];
+        List<String> AffiliatedTerrorists = new List<String> { "", "", "", "" };
     }
 }
