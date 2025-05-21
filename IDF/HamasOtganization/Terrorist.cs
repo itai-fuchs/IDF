@@ -4,45 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDF.HamasOtganization
+namespace IDF
 {
+ 
     internal class Terrorist
     {
 
         //name
-        string Name;
+        private string Name;
         public string GetName() { return Name; }
         //rank
-        int Rank;
+        private int Rank;
         public int GetRank() { return Rank; }
 
         //is alive
-        bool IsAlive;
-        public bool GetIsalive() { return IsAlive; }
+        private bool IsAlive;
+        public bool GetIsAlive() { return IsAlive; }
+        public void SetIsAlive(bool is_alive) { IsAlive = is_alive; }
+
 
 
         //terorist weapons
         List<string> Weapons = new List<string> { };
-        public List<string> GetWeapons() { return Weapons; }
 
-
+        //return copy of weapon list
+        public List<string> GetWeapons() { return new List<string>(Weapons);}
 
         //constractor
         public Terrorist(string name)
         {
             this.Name = name;
-
-            //create random rank
             Random random = new Random();
             this.Rank = random.Next(1, 6);
-
             this.IsAlive = true;
             this.Weapons = weaponslist();
-            Hamas.Terrorist_list.Add(this);
-
-
+            Hamas.AddTerroristToList(this);
         }
-        //create random weapons
+
+        //create random weapons_list
         List<string> weaponslist()
         {
             Random random = new Random();
@@ -57,7 +56,9 @@ namespace IDF.HamasOtganization
             }
             return Weapons;
         }
-    }
+
+        
+        }
 }
 
 

@@ -1,4 +1,6 @@
-﻿using IDF.HamasOtganization;
+﻿using IDF;
+
+using IDF.IdfOrganization.StrikeOptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +15,14 @@ namespace IDF
     {
         static void Main(string[] args)
         {
-          Terrorist a = new Terrorist("muhamad");
-            Terrorist b = new Terrorist("muhamad");
+         zik a = new zik();
+            Terrorist bibi = new Terrorist("itai");
 
+            Console.WriteLine(Static_IDF.GetStrikeDict()[a.Name][0].Name);
 
-            Console.Write(Hamas.Terrorist_list[1].GetRank());
-            
-          
         }
     }
 }
+
+
+

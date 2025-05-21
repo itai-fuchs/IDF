@@ -45,6 +45,11 @@
   <ItemGroup>
     <Compile Include="HamasOtganization\Hamas.cs" />
     <Compile Include="HamasOtganization\Terrorist.cs" />
+    <Compile Include="IdfOrganization\Static_IDF.cs" />
+    <Compile Include="IdfOrganization\StrikeOptions\F16.cs" />
+    <Compile Include="IdfOrganization\StrikeOptions\M109 Artillery.cs" />
+    <Compile Include="IdfOrganization\StrikeOptions\StrikeInterface.cs" />
+    <Compile Include="IdfOrganization\StrikeOptions\zik.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
