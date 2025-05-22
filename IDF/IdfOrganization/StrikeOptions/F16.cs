@@ -7,32 +7,41 @@ using System.Threading.Tasks;
 
 namespace IDF
 {
+    /// <summary>
+    /// F16 attack aircraft class.
+    /// </summary>
     class F16 : IStrikeOptions
     {
         public string Name { get; } = "F16 Fighter Jet";
 
-        public int Ammunition_capacity { get; private set; } = 8;
+        public int AmmunitionCapacity { get; private set; } = 8;
 
-        public double Fuel_supply_Galon { get; private set; } = 700;
+        public double FuelSupplyGalon { get; private set; } = 700;
 
-        public List<string> Effective_against { get; } = new List<string> { "buildings" };
+        public List<string> EffectiveAgainst { get; } = new List<string> { "buildings" };
 
+
+        //refuling method
         public void Refueling()
         {
-            Fuel_supply_Galon = 700;
+            FuelSupplyGalon = 700;
         }
+
+        //attack method
         public void attack()
         {
-            Ammunition_capacity -= 1;
-            Fuel_supply_Galon -= 55;
+            AmmunitionCapacity -= 1;
+            FuelSupplyGalon -= 55;
 
         }
+        //AmmunitionRefill method
         public void AmmunitionRefill()
-        { Ammunition_capacity = 8; }
+        { AmmunitionCapacity = 8; }
 
+        //check if available method
         public bool IsAvailable()
         {
-            if (Ammunition_capacity == 0 || Fuel_supply_Galon == 0) return false;
+            if (AmmunitionCapacity == 0 || FuelSupplyGalon == 0) return false;
             else return true;
 
 

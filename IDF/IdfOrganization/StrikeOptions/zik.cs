@@ -13,27 +13,35 @@ namespace IDF.IdfOrganization.StrikeOptions
     {
         public string Name { get; } = "Hermes 460 (zik) Drone";
 
-        public int Ammunition_capacity { get; private set; } =3;
+        public int AmmunitionCapacity { get; private set; } =3;
 
-        public double Fuel_supply_Galon { get; private set; } = 400;
+        public double FuelSupplyGalon { get; private set; } = 400;
 
-        public List<string> Effective_against { get; } = new List<string> { "people", "vehicles" };
+        public List<string> EffectiveAgainst { get; } = new List<string> { "people", "vehicles" };
 
+
+        //refuling method
         public void Refueling()
         {
-            Fuel_supply_Galon = 400;
+            FuelSupplyGalon = 400;
         }
+
+        //attack method
         public void attack()
         {
-            Ammunition_capacity -= 1;
-            Fuel_supply_Galon -= 55;
+            AmmunitionCapacity -= 1;
+            FuelSupplyGalon -= 55;
 
         }
+        //AmmunitionRefill method
         public void AmmunitionRefill()
-        { Ammunition_capacity = 3; }
+        { AmmunitionCapacity = 3; }
+
+
+        //check if available method
         public bool IsAvailable()
         {
-            if (Ammunition_capacity == 0 || Fuel_supply_Galon == 0) return false;
+            if (AmmunitionCapacity == 0 || FuelSupplyGalon == 0) return false;
             else return true;
         }
        

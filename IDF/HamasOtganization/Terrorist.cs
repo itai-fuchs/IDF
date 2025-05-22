@@ -67,8 +67,23 @@ namespace IDF
             return selectedWeapons;
         }
 
-        
+        public override string ToString()
+        {
+            return $"NAME: {GetName()}\n" +
+                $"RANK: {GetRank()}\n" +
+                $"WEAPONS:\n{GetWeaponsStr()}";
         }
+
+        public string GetWeaponsStr()
+        {
+            string weapons = "";
+            foreach (string weapon in Weapons)
+            {
+                weapons += weapon + ", ";
+            }
+            return weapons;
+        }
+    }
 }
 
 

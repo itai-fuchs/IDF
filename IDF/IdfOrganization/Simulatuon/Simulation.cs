@@ -11,7 +11,7 @@ namespace IDF
     internal class Simulation
     {
 
-        //Generates a list of terrorists
+        // method that Generates a list of terrorists
         public void InitializingTerroristList()
         {
             string[] firstNames = { "Mohammed", "Ahmad", "Ali", "Yasser", "Ismail", "Rami", "Mona", "Noura", "Layna", "Sameh" };
@@ -27,8 +27,8 @@ namespace IDF
 
             }
         }
-        
-        //Generates a dictionary of attack tool lists
+
+        //method that Generates a dictionary of attack tool lists
         public void InitializingStrikeList()
         {
             F16 f16 = new F16();
@@ -41,6 +41,7 @@ namespace IDF
             
 
         }
+        //method that Generates Generate 10–20 random intelligence messages.
     }
 }
 

@@ -11,29 +11,36 @@ namespace IDF.IdfOrganization.StrikeOptions
     
         public string Name { get; } = "M109 Artillery";
 
-        public int Ammunition_capacity { get; private set; } = 40;
+        public int AmmunitionCapacity { get; private set; } = 40;
 
-        public double Fuel_supply_Galon { get; private set; } = 200;
+        public double FuelSupplyGalon { get; private set; } = 200;
 
-        public List<string> Effective_against { get; } = new List<string> { "open areas" };
+        public List<string> EffectiveAgainst { get; } = new List<string> { "open areas" };
 
+        //refuling method
         public void Refueling()
         {
-            Fuel_supply_Galon =200;
+            FuelSupplyGalon =200;
         }
+
+        //attack method
         public void attack()
         {
             Random random = new Random();
-            Ammunition_capacity -=random.Next(1,3);
-            Fuel_supply_Galon -= 10;
+            AmmunitionCapacity -=random.Next(1,3);
+            FuelSupplyGalon -= 10;
 
         }
+        
+        //AmmunitionRefill method
         public void AmmunitionRefill()
-        { Ammunition_capacity = 40; }
+        { AmmunitionCapacity = 40; }
 
-       public bool IsAvailable()
+
+        //check if available method
+        public bool IsAvailable()
         {
-            if (Ammunition_capacity == 0 || Fuel_supply_Galon == 0) return false;
+            if (AmmunitionCapacity == 0 || FuelSupplyGalon == 0) return false;
             else return true;
         }
        

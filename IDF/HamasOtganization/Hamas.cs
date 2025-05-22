@@ -1,6 +1,7 @@
 ﻿using IDF;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,22 +12,30 @@ using System.Threading.Tasks;
 /// </summary>
 internal static class Hamas
 {
-
-    private static string formation_date = "10/12/1987";
-    public static string  Get_formation_date() { return formation_date; }
-
-
-    private static string Current_commander = "Haled Mahshal";
-    public static void Get_Current_commander() { Console.WriteLine(Current_commander);}
-    public static void Set_Current_commander(string current_commander) { Current_commander = current_commander;}
+    //formation_date
+    private static string FormationDate = "10/12/1987";
+    public static string  GetFormationDate() { return FormationDate; }
 
 
-    private static List<Terrorist> Terrorist_list = new List<Terrorist>();
-    public static List<Terrorist> Get_Terrorist_list() { return Terrorist_list; }
+    //Current_commander
+    private static string CurrentCommander = "Haled Mahshal";
+    public static void GetCurrentCommander() { Console.WriteLine(CurrentCommander);}
 
+
+    //make Terrorist_list
+    private static List<Terrorist> TerroristList = new List<Terrorist>();
+
+    //method that get readOnly terroristList.
+    public static ReadOnlyCollection<Terrorist> GetTerroristList()
+    {
+        return TerroristList.AsReadOnly();
+    }
+
+
+    //method that add terrorist to a list.
     public static void AddTerroristToList(Terrorist terrorist)
     {
-        Terrorist_list.Add(terrorist);
+        TerroristList.Add(terrorist);
     }
 
 

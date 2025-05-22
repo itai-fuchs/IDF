@@ -24,7 +24,7 @@ namespace IDF
         private static Dictionary<string, List<IStrikeOptions>> StrikeDict = new Dictionary<string, List<IStrikeOptions>>();
 
 
-        //function of   Register Strike option to the dict
+        //method of Register Strike option to the dict
         public static void RegisterStrike(IStrikeOptions strike)
         {
 
@@ -38,7 +38,7 @@ namespace IDF
             }
         }
 
-        // function that return the dict in readonly format.
+        // method that return the dict in readonly format.
         public static IReadOnlyDictionary<string,List< IStrikeOptions>> GetStrikeDict()
         {
             return StrikeDict;

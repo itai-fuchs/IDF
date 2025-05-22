@@ -13,9 +13,9 @@ namespace IDF
     internal interface IStrikeOptions
     {
         string Name { get;}
-        int Ammunition_capacity { get;}
-        double Fuel_supply_Galon { get;}
-        List <string> Effective_against {get;}
+        int AmmunitionCapacity { get;}
+        double FuelSupplyGalon { get;}
+        List <string> EffectiveAgainst {get;}
         void Refueling();
         void AmmunitionRefill();
         void attack();
