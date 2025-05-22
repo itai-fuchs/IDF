@@ -36,12 +36,6 @@ namespace IDF.IdfOrganization.StrikeOptions
             if (Ammunition_capacity == 0 || Fuel_supply_Galon == 0) return false;
             else return true;
         }
-        public M109_Artillery()
-        {
-
-            Static_IDF.RegisterStrike(this);
-
-
-        }
+       
     }
 }

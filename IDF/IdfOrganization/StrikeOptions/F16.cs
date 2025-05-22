@@ -37,13 +37,7 @@ namespace IDF
 
 
         }
-        public F16()
-        {
-
-            Static_IDF.RegisterStrike(this);
-
-
-        }
+        
 
     }
 }

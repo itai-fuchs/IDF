@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace IDF
 {
+    /// <summary>
+    /// Interface of the types of IDF attack vehicles.
+    /// </summary>
     internal interface IStrikeOptions
     {
         string Name { get;}
@@ -17,9 +20,5 @@ namespace IDF
         void AmmunitionRefill();
         void attack();
         bool IsAvailable();
-
-
-
-
     }
 }

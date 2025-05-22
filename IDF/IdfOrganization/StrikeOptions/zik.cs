@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace IDF.IdfOrganization.StrikeOptions
 {
-    internal class zik: IStrikeOptions
+    /// <summary>
+    /// Class of the Zik attack tool.
+    /// </summary>
+    internal class Zik: IStrikeOptions
     {
         public string Name { get; } = "Hermes 460 (zik) Drone";
 
@@ -33,14 +36,7 @@ namespace IDF.IdfOrganization.StrikeOptions
             if (Ammunition_capacity == 0 || Fuel_supply_Galon == 0) return false;
             else return true;
         }
-        public zik()
-        {
-
-            Static_IDF.RegisterStrike(this);
-
-
-        }
-
+       
 
     }
 }

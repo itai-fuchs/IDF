@@ -13,7 +13,7 @@ internal static class Hamas
 {
 
     private static string formation_date = "10/12/1987";
-    public static void Get_formation_date() { Console.WriteLine(formation_date); }
+    public static string  Get_formation_date() { return formation_date; }
 
 
     private static string Current_commander = "Haled Mahshal";
