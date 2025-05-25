@@ -17,6 +17,14 @@ namespace IDF.IdfOrganization.StrikeOptions
 
         public List<string> EffectiveAgainst { get; } = new List<string> { "open areas" };
 
+
+        //ID
+        static string t = Guid.NewGuid().ToString();
+        public string id { get; } = t.Substring(0, 7);
+
+
+
+
         //refuling method
         public void Refueling()
         {
@@ -40,7 +48,7 @@ namespace IDF.IdfOrganization.StrikeOptions
         //check if available method
         public bool IsAvailable()
         {
-            if (AmmunitionCapacity == 0 || FuelSupplyGalon == 0) return false;
+            if (AmmunitionCapacity == 0 || FuelSupplyGalon < 10) return false;
             else return true;
         }
        

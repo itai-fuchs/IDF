@@ -13,6 +13,7 @@ namespace IDF
     internal interface IStrikeOptions
     {
         string Name { get;}
+        string id {  get;}
         int AmmunitionCapacity { get;}
         double FuelSupplyGalon { get;}
         List <string> EffectiveAgainst {get;}
@@ -20,5 +21,6 @@ namespace IDF
         void AmmunitionRefill();
         void attack();
         bool IsAvailable();
+        
     }
 }

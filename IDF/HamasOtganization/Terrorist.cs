@@ -28,14 +28,14 @@ namespace IDF
         //is alive
         private bool IsAlive;
         public bool GetIsAlive() { return IsAlive; }
-        public void IsDied(bool is_alive) { IsAlive = is_alive; }
+        public void IsDied() { IsAlive = false; }
 
 
 
         //making terorist weaponsList.
         List<string> Weapons = new List<string> { };
 
-        //get redonly weapon list.
+        //get readonly weapon list.
         public ReadOnlyCollection<string> GetWeapons() => Weapons.AsReadOnly();
 
 
@@ -54,7 +54,8 @@ namespace IDF
         List<string> weaponslist()
         {
             
-            List<string> TempWeaponsList = new List<string> { "knife", "gun", "M16", "AK47" };
+            List<string> TempWeaponsList = new List<string>
+            { "knife", "gun", "M16", "AK47" };
             List<string> selectedWeapons = new List<string>();
 
             for (int i = 0; i <= random.Next(1, 5); i++)

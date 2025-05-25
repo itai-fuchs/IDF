@@ -1,4 +1,5 @@
 ﻿using IDF.IdfOrganization.StrikeOptions;
+using IDF_Operation___First_Strike.AMAN;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,25 +24,38 @@ namespace IDF
             for (int i = 0; i <= random.Next(10, 20); i++)
             {
                 Terrorist terrorist = new Terrorist(firstNames[random.Next(0, 10)] +" "+ middleNames[random.Next(0, 10)] +" "+ lastNames[random.Next(0, 10)]);
-                Hamas.AddTerroristToList(terrorist);
+                Hamas.AddTerrorist(terrorist);
 
             }
         }
 
-        //method that Generates a dictionary of attack tool lists
+        //method that Generates a dictionary of  1 attack tool lists
         public void InitializingStrikeList()
         {
             F16 f16 = new F16();
             Zik zik = new Zik();
             M109_Artillery m109_Artillery = new M109_Artillery();
             List<IStrikeOptions> strikeOptions = new List<IStrikeOptions> { f16, zik, m109_Artillery };
-            Static_IDF.RegisterStrike(strikeOptions[0]);
-            Static_IDF.RegisterStrike(strikeOptions[1]);
-            Static_IDF.RegisterStrike(strikeOptions[2]);
+            Static_IDF.AddStrike(strikeOptions[0]);
+            Static_IDF.AddStrike(strikeOptions[1]);
+            Static_IDF.AddStrike(strikeOptions[2]);
             
 
         }
-        //method that Generates Generate 10–20 random intelligence messages.
+        ////method that Generates Generate 10–20 random intelligence messages.
+
+        ////public void RandomInitializingMessages()
+        ////{
+            
+        ////    Random random = new Random();
+
+        ////    for (int i = 0; i <= random.Next(10, 20); i++)
+        ////    {
+        ////     AMAN message= new AMAN();
+               
+
+        ////    }
+        //}
     }
 }
 

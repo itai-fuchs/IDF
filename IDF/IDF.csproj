@@ -45,6 +45,10 @@
   <ItemGroup>
     <Compile Include="HamasOtganization\Hamas.cs" />
     <Compile Include="HamasOtganization\Terrorist.cs" />
+    <Compile Include="IdfOrganization\AMAN\Aman.cs" />
+    <Compile Include="IdfOrganization\AMAN\Analize.cs" />
+    <Compile Include="IdfOrganization\Commander Console\Interface control.cs" />
+    <Compile Include="IdfOrganization\Commander Console\StrategicControl.cs" />
     <Compile Include="IdfOrganization\Simulatuon\Simulation.cs" />
     <Compile Include="IdfOrganization\Static_IDF.cs" />
     <Compile Include="IdfOrganization\StrikeOptions\F16.cs" />

@@ -25,7 +25,7 @@ namespace IDF
 
 
         //method of Register Strike option to the dict
-        public static void RegisterStrike(IStrikeOptions strike)
+        public static void AddStrike(IStrikeOptions strike)
         {
 
             if (StrikeDict.ContainsKey(strike.Name))
@@ -34,12 +34,12 @@ namespace IDF
             }
             else
             {
-                StrikeDict[strike.Name] = new List<IStrikeOptions> { strike };
+                StrikeDict[strike.Name] = new List<IStrikeOptions> {strike};
             }
         }
 
-        // method that return the dict in readonly format.
-        public static IReadOnlyDictionary<string,List< IStrikeOptions>> GetStrikeDict()
+        // method that return the strike dict.
+        public static Dictionary<string,List< IStrikeOptions>> GetStrikeDict()
         {
             return StrikeDict;
         }

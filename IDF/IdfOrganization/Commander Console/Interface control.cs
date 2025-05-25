@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace IDF.IdfOrganization.Commander_Console
-{
-    internal interface IStrategicControl
-    {
+//namespace IDF
+//{
+//    internal interface IStrategicControl
+//    {
 
 
-       Terrorist TerroristMostReport(List<Dictionary<Terrorist, List<Aman>>> list);
-        void StrikeAvailability();
+       
+//        void PrintStrikeAvailability();
 
-        void Target_Prioritization();
-    }
-}
+//        Dictionary<int, List<Terrorist>> TargetPrioritizationDict();
+
+//        List<Terrorist> MostDangerousTerrorists();
+
+//        void StrikeExecution();
+
+//        void  InventoryCheck();
+//    }
+//}

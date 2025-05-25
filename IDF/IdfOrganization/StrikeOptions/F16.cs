@@ -20,6 +20,11 @@ namespace IDF
 
         public List<string> EffectiveAgainst { get; } = new List<string> { "buildings" };
 
+        //ID
+        static string t = Guid.NewGuid().ToString();
+        public string id { get; } = t.Substring(0, 7);
+            
+
 
         //refuling method
         public void Refueling()
@@ -31,7 +36,7 @@ namespace IDF
         public void attack()
         {
             AmmunitionCapacity -= 1;
-            FuelSupplyGalon -= 55;
+            FuelSupplyGalon -= 80;
 
         }
         //AmmunitionRefill method
@@ -41,7 +46,7 @@ namespace IDF
         //check if available method
         public bool IsAvailable()
         {
-            if (AmmunitionCapacity == 0 || FuelSupplyGalon == 0) return false;
+            if (AmmunitionCapacity == 0 || FuelSupplyGalon < 80) return false;
             else return true;
 
 

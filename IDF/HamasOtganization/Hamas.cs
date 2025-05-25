@@ -26,20 +26,24 @@ internal static class Hamas
     private static List<Terrorist> TerroristList = new List<Terrorist>();
 
     //method that get readOnly terroristList.
-    public static ReadOnlyCollection<Terrorist> GetTerroristList()
+    public static List<Terrorist> GetTerroristList()
     {
-        return TerroristList.AsReadOnly();
+        return TerroristList;
     }
 
 
     //method that add terrorist to a list.
-    public static void AddTerroristToList(Terrorist terrorist)
+    public static void AddTerrorist(Terrorist terrorist)
     {
         TerroristList.Add(terrorist);
     }
 
+    public static void RemoveTerrorist(Terrorist terrorist)
+    {
+        TerroristList.Remove(terrorist);
+    }
 
-
+ 
 
 
 }

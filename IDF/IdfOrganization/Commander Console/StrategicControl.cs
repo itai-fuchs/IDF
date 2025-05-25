@@ -1,92 +1,214 @@
-﻿using System;
+﻿using IDF;
+using IDF_Operation___First_Strike.AMAN;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDF.IdfOrganization.Commander_Console
+namespace IDF
 {
-    internal class StrategicControl : IStrategicControl
+    internal class StrategicControl
     {
+        private static Random random = new Random();
 
-        public Terrorist TerroristMostReport(List<Dictionary<Terrorist, List<Aman>>> list)
-        {
-            int maxReports = 0;
-            Terrorist terroristWithMostReports = null;
-
-            foreach (Dictionary<Terrorist, List<Aman>> dict in list)
-            {
-                foreach (KeyValuePair<Terrorist, List<Aman>> pair in dict)
-                {
-                    Terrorist terrorist = pair.Key;
-                    List<Aman> reports = pair.Value;
-
-                    if (reports.Count > maxReports)
-                    {
-                        maxReports = reports.Count;
-                        terroristWithMostReports = terrorist;
-                    }
-                }
-            }
-
-            return terroristWithMostReports;
-
-        }
-
-        public void StrikeAvailability()
+        /// <summary>
+        /// method that prints the weapons and their details.
+        /// </summary>
+        public void PrintStrikeAvailability()
         {
             foreach (KeyValuePair<string, List<IStrikeOptions>> kvp in Static_IDF.GetStrikeDict())
             {
                 string toolName = kvp.Key;
                 List<IStrikeOptions> tools = kvp.Value;
                 Console.WriteLine($"{toolName}:");
-                Console.WriteLine();
+                Console.WriteLine("");
 
                 foreach (IStrikeOptions strike in tools)
                 {
                     if (strike.IsAvailable())
                     {
 
-                        Console.WriteLine($"NAME: {strike.Name}\nAVAILBAL: {strike.IsAvailable()}\nFUEL STOCK: {strike.FuelSupplyGalon}\nAMMUNITION STOCK: {strike.AmmunitionCapacity}");
+                        Console.WriteLine($"ID: {strike.id}\n" +
+                            $"AVAILBAL: {strike.IsAvailable()}\n" +
+                            $"FUEL: {strike.FuelSupplyGalon}\n" +
+                            $"AMMUNITION: {strike.AmmunitionCapacity}\n");
+                             Console.WriteLine("");
                     }
                 }
             }
         }
 
-        public void Target_Prioritization()
+       
+        public void PrintMostDangerousTerrorists()
         {
-
-
-            int qualityScore = 0;
-            Terrorist wanted1 =null;
-            foreach (Terrorist terrorist in Hamas.GetTerroristList())
+            List<Terrorist> mostDangerous = Analize.GetMostDangerousTerrorists();
+            int maxKey =Analize.TargetPrioritizationDict().Keys.Max();
+            foreach (Terrorist terrorist in mostDangerous)
             {
-                int temp = 0;
-                foreach (string weapon in terrorist.GetWeapons())
+                Console.WriteLine(terrorist + $"\nQUALITY SCORE: {maxKey}\nlatest known location: {AMAN.GetLastLocation(terrorist)}");
+            }
+        }
+
+
+        public void PrintTargetPrioritization()
+        {
+            Dictionary<int, List<Terrorist>> dict = Analize.TargetPrioritizationDict();
+
+            if (dict.Count == 0)
+            {
+                Console.WriteLine("No terrorists to display.");
+                return;
+            }
+
+            Console.WriteLine("=== Target Prioritization by Risk Level ===");
+
+            foreach (KeyValuePair<int, List<Terrorist>> kvp in dict.OrderByDescending(k => k.Key))
+            {
+                int riskLevel = kvp.Key;
+                List<Terrorist> terrorists = kvp.Value;
+
+                Console.WriteLine($"Risk Level: {riskLevel} - Count: {terrorists.Count}");
+                foreach (Terrorist terrorist in terrorists)
                 {
-                    if (weapon == "knife") temp += 1;
-                    else if (weapon == "gun") temp += 2;
-                    else temp += 3;
+                    Console.WriteLine($"  - {terrorist.GetName()}, Rank: {terrorist.GetRank()}, Alive: {terrorist.GetIsAlive()}");
                 }
-                temp = terrorist.GetRank() * temp;
-                if (temp > qualityScore)
+                Console.WriteLine();
+            }
+        }
+
+
+        /// <summary>
+        /// A method that return and print  the most dangerous terrorist
+        /// </summary>
+
+       
+
+
+
+        /// <summary>
+        /// A method that returns an available attack tool
+        /// </summary>
+
+        private IStrikeOptions InventoryCheck(string unitKey)
+        {
+            List<IStrikeOptions> unitList = Static_IDF.GetStrikeDict()[unitKey];
+
+            foreach (IStrikeOptions strike in unitList)
+            {
+                if (!strike.IsAvailable())
                 {
-                    qualityScore = temp;
-                    wanted1 = terrorist;
+                    strike.Refueling();
+                    strike.AmmunitionRefill();
+                }
+
+                if (strike.IsAvailable())
+                {
+                    return strike;
+                }
+            }
+
+            return null; 
+        }
+
+
+
+
+        /// <summary>
+        /// attack method
+        /// </summary>
+        public void StrikeExecution()
+        {
+            List<Terrorist> mostdangerousTerrorists = Analize.GetMostDangerousTerrorists();
+
+            foreach (Terrorist terrorist in mostdangerousTerrorists)
+            {
+                string Location = AMAN.GetLastLocation(terrorist);
+                IStrikeOptions strike = null;
+
+               ;
+                if (Location == "home")
+                {
+                    strike = InventoryCheck("F16 Fighter Jet");
+                }
+                else if (Location == "car")
+                {
+                    strike = InventoryCheck("Hermes 460 (zik) Drone");
+                }
+                else if (Location == "outside")
+                {
+                    strike = InventoryCheck("M109 Artillery");
+                }
+
+                if (strike != null && strike.IsAvailable())
+                {
+                    strike.attack();
+                    terrorist.IsDied();
+                    Hamas.RemoveTerrorist(terrorist);
+
 
                 }
-                Console.WriteLine(wanted1 + $"QUALITY SCORE: {qualityScore}\n");
+                else Console.WriteLine("Unable to attack");
+            }
+        }
+
+
+        public void CommanderMenu()
+        {
+            bool exit = false;
+
+            while (!exit)
+            {
+                Console.WriteLine("=== COMANDOR MENUE ===");
+                Console.WriteLine("FOR STRIKE COLLECTION PLEASE PRESS 1");
+                Console.WriteLine("FOR THE TERRORIST COLLECTION BY RISK PLEASE PRESS 2");
+                Console.WriteLine("FOR THE MOST DENGEROUS TERRORIST PLEASE PRESS 3");
+                Console.WriteLine("FOR ATTACK THE MOST DANGEROUS TERRORIST PLEASE PRESS 4");
+                Console.WriteLine("FOR EXIT PRESS 0\n");
+                
+                
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        PrintStrikeAvailability();
+                        break;
+
+                    case "2":
+                        PrintTargetPrioritization();
+                        break;
+
+                    case "3":
+                        PrintMostDangerousTerrorists();
+                        break;
+
+                    case "4":
+                        StrikeExecution();
+                        break;
+
+                    case "0":
+                        exit = true;
+                        Console.WriteLine("exit");
+                        break;
+
+                    default:
+                        Console.WriteLine("try again");
+                        break;
+                }
+
+                Console.WriteLine();
+
 
             }
+        }
     }
-    }
-
-
-
-
-
 
 }
+
+
 
