@@ -36,13 +36,15 @@ namespace IDF_Operation___First_Strike.AMAN
                 IntelligenceMessages[TerroristName] = new SortedList<DateTime, string>();
             }
 
-            var list = IntelligenceMessages[TerroristName];
-            while (list.ContainsKey(Timestamp))
+            SortedList<DateTime, string> terrorist_list = IntelligenceMessages[TerroristName];
+            
+            while (terrorist_list.ContainsKey(Timestamp))
+            //Checks if the given time is already in use and if so adds a millisecond.
             {
                 Timestamp = Timestamp.AddMilliseconds(1);
             }
 
-            list.Add(Timestamp, LastKnownLocation);
+            terrorist_list.Add(Timestamp, LastKnownLocation);
         }
 
         public static Dictionary<Terrorist, SortedList<DateTime, string>> GetIntelligenceMessages()
