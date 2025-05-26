@@ -42,7 +42,10 @@ namespace IDF
             }
         }
 
-       
+
+        /// <summary>
+        /// A method that return and print  the most dangerous terrorist
+        /// </summary>
         public void PrintMostDangerousTerrorists()
         {
             List<Terrorist> mostDangerous = Analize.GetMostDangerousTerrorists();
@@ -81,11 +84,36 @@ namespace IDF
         }
 
 
-        /// <summary>
-        /// A method that return and print  the most dangerous terrorist
-        /// </summary>
+        
 
-       
+
+        // Prints a list of all terrorists and their known locations sorted by timestamp
+        public void PrintAllTerroristLocations()
+        {
+            var intelligenceMessages = AMAN.GetIntelligenceMessages();
+
+            if (intelligenceMessages.Count == 0)
+            {
+                Console.WriteLine("No intelligence data available.");
+                return;
+            }
+
+            foreach (var pair in intelligenceMessages)
+            {
+                Terrorist terrorist = pair.Key;
+                SortedList<DateTime, string> messages = pair.Value;
+
+                Console.WriteLine($"Terrorist: {terrorist.GetName()}");
+
+                foreach (var message in messages)
+                {
+                    Console.WriteLine($"  Time: {message.Key} | Location: {message.Value}");
+                }
+
+                Console.WriteLine();
+            }
+        }
+
 
 
 
@@ -124,6 +152,11 @@ namespace IDF
         {
             List<Terrorist> mostdangerousTerrorists = Analize.GetMostDangerousTerrorists();
 
+            if (mostdangerousTerrorists == null)
+            {
+                Console.WriteLine("No dangerous terrorist found.");
+                return;
+            }
             foreach (Terrorist terrorist in mostdangerousTerrorists)
             {
                 string Location = AMAN.GetLastLocation(terrorist);
@@ -147,7 +180,9 @@ namespace IDF
                 {
                     strike.attack();
                     terrorist.IsDied();
+                    Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.GetName()} is alive?\n{terrorist.GetIsAlive()}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining fuel stock:{strike.AmmunitionCapacity}");
                     Hamas.RemoveTerrorist(terrorist);
+                    
 
 
                 }
@@ -166,7 +201,8 @@ namespace IDF
                 Console.WriteLine("FOR STRIKE COLLECTION PLEASE PRESS 1");
                 Console.WriteLine("FOR THE TERRORIST COLLECTION BY RISK PLEASE PRESS 2");
                 Console.WriteLine("FOR THE MOST DENGEROUS TERRORIST PLEASE PRESS 3");
-                Console.WriteLine("FOR ATTACK THE MOST DANGEROUS TERRORIST PLEASE PRESS 4");
+                Console.WriteLine("FOR ALL TERRORISSTS LOCATION PLEASE PRESS  4");
+                Console.WriteLine("FOR ATTACK THE MOST DANGEROUS TERRORIST PLEASE PRESS 5");
                 Console.WriteLine("FOR EXIT PRESS 0\n");
                 
                 
@@ -188,6 +224,11 @@ namespace IDF
                         break;
 
                     case "4":
+                        PrintAllTerroristLocations();
+                        break;
+
+
+                    case "5":
                         StrikeExecution();
                         break;
 
