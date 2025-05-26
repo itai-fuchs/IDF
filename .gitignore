@@ -1,0 +1,32 @@
+# Visual Studio תיקיות והגדרות
+.vs/
+
+# תיקיות Build ודברים זמניים
+bin/
+obj/
+
+# קבצי ניהול פרויקט של Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# תיקיות NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# קבצי debug ומפות PDB
+*.pdb
+
+# קבצי לוג
+*.log
+
+# קבצים זמניים כלליים
+*.tmp
+*.temp
+*.cache
+
+# קבצים שנוצרים על ידי מערכת ההפעלה
+Thumbs.db
+.DS_Store
