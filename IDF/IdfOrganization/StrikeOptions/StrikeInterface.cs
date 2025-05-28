@@ -19,7 +19,7 @@ namespace IDF
         List <string> EffectiveAgainst {get;}
         void Refueling();
         void AmmunitionRefill();
-        void attack();
+        void Attack();
         bool IsAvailable();
         
     }

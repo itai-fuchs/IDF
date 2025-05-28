@@ -9,47 +9,41 @@ namespace IDF.IdfOrganization.StrikeOptions
     /// <summary>
     /// Class of the Zik attack tool.
     /// </summary>
-    internal class Zik: IStrikeOptions
+    internal class Zik : IStrikeOptions
     {
         public string Name { get; } = "Hermes 460 (zik) Drone";
-
-        public int AmmunitionCapacity { get; private set; } =3;
-
-        public double FuelSupplyGalon { get; private set; } = 400;
-
+        public int AmmunitionCapacity { get; private set; }
+        public double FuelSupplyGalon { get; private set; }
         public List<string> EffectiveAgainst { get; } = new List<string> { "people", "vehicles" };
+        public string id { get; }
 
+        // Constructor with default values
+        public Zik(int ammunitionCapacity = 3, double fuelSupplyGalon = 400)
+        {
+            AmmunitionCapacity = ammunitionCapacity;
+            FuelSupplyGalon = fuelSupplyGalon;
+            id = Guid.NewGuid().ToString().Substring(0, 7);
+        }
 
-        // ID
-        static string t = Guid.NewGuid().ToString();
-        public string id { get; } = t.Substring(0, 7);
-
-
-        //refuling method
         public void Refueling()
         {
             FuelSupplyGalon = 400;
         }
 
-        //attack method
-        public void attack()
+        public void Attack()
         {
             AmmunitionCapacity -= 1;
             FuelSupplyGalon -= 55;
-
         }
-        //AmmunitionRefill method
+
         public void AmmunitionRefill()
-        { AmmunitionCapacity = 3; }
+        {
+            AmmunitionCapacity = 3;
+        }
 
-
-        //check if available method
         public bool IsAvailable()
         {
-            if (AmmunitionCapacity == 0 || FuelSupplyGalon <55) return false;
-            else return true;
+            return AmmunitionCapacity > 0 && FuelSupplyGalon >= 55;
         }
-       
-
     }
 }

@@ -178,7 +178,7 @@ namespace IDF
 
                 if (strike != null && strike.IsAvailable())
                 {
-                    strike.attack();
+                    strike.Attack();
                     terrorist.IsDied();
                     Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.GetName()} is alive?\n{terrorist.GetIsAlive()}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining fuel stock:{strike.AmmunitionCapacity}");
                     Hamas.RemoveTerrorist(terrorist);

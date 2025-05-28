@@ -11,13 +11,13 @@ namespace IDF
     {
         // formation_date
 
-        private static string formation_date = "26/05/1948";
-        public static string  Get_formation_date() {return formation_date;}
+        private static string FormationDate = "26/05/1948";
+        public static string  GetFormationDate() {return FormationDate;}
 
 
         // Current_commander
-        private static string Current_commander = "Eyal zamir";
-        public static string GetCurrent_commander() { return Current_commander; }
+        private static string CurrentCommander = "Eyal zamir";
+        public static string GetCurrentCommander() { return CurrentCommander; }
 
 
         //// make dict of strike option

@@ -55,6 +55,7 @@
     <Compile Include="IdfOrganization\StrikeOptions\M109 Artillery.cs" />
     <Compile Include="IdfOrganization\StrikeOptions\StrikeInterface.cs" />
     <Compile Include="IdfOrganization\StrikeOptions\zik.cs" />
+    <Compile Include="Logger\Loger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
