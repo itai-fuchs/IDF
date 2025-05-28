@@ -124,7 +124,5 @@ namespace IDF_Operation___First_Strike.AMAN
             DateTime latestTime = messages.Keys[messages.Count - 1];
             return messages[latestTime];
         }
-
     }
 }
-;
