@@ -149,54 +149,181 @@ namespace IDF
         /// attack method
         /// </summary>
 
-        public void StrikeExecution()//משופר
-        {
-            List<Terrorist> mostdangerousTerrorists = Analize.GetMostDangerousTerrorists();
+        //public void StrikeExecution()//משופר
+        //{
+        //    List<Terrorist> mostdangerousTerrorists = Analize.GetMostDangerousTerrorists();
 
-            if (mostdangerousTerrorists == null || mostdangerousTerrorists.Count == 0)
+        //    if (mostdangerousTerrorists == null || mostdangerousTerrorists.Count == 0)
+        //    {
+        //        Console.WriteLine("No dangerous terrorist found.");
+        //        return;
+        //    }
+
+        //    foreach (Terrorist terrorist in mostdangerousTerrorists)
+        //    {
+        //        string Location = AMAN.GetLastLocation(terrorist);
+        //        IStrikeOptions strike = null;
+
+        //        if (Location.Contains("home"))
+        //        {
+        //            strike = InventoryCheck("F16 Fighter Jet");
+        //        }
+        //        else if (Location.Contains("car"))
+        //        {
+        //            strike = InventoryCheck("Hermes 460 (zik) Drone");
+        //        }
+        //        else if (Location.Contains("outside"))
+        //        {
+        //            strike = InventoryCheck("M109 Artillery");
+        //        }
+
+        //        if (strike != null && strike.IsAvailable())
+        //        {
+        //            strike.attack();
+        //            terrorist.IsDied();
+        //            Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.GetName()} is alive?\n{terrorist.GetIsAlive()}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining ammo stock: {strike.AmmunitionCapacity}");
+        //            Hamas.RemoveTerrorist(terrorist);
+        //        }
+        //        else
+        //        {
+        //            if (strike == null)
+        //            {
+        //                Console.WriteLine($"Unable to attack: No available strike unit for location '{Location}'");
+        //            }
+        //            else if (!strike.IsAvailable())
+        //            {
+        //                Console.WriteLine($"Unable to attack: Strike unit '{strike.Name}' (ID: {strike.id}) is unavailable.\nFuel: {strike.FuelSupplyGalon}, Ammo: {strike.AmmunitionCapacity}");
+        //            }
+        //        }
+        //    }
+        //}
+
+        public List<Terrorist> StrikeExecution()
+        {
+            List<Terrorist> terrorists = Analize.GetMostDangerousTerrorists();
+            if (terrorists == null || terrorists.Count == 0)
             {
                 Console.WriteLine("No dangerous terrorist found.");
-                return;
+                return new List<Terrorist>();
             }
 
-            foreach (Terrorist terrorist in mostdangerousTerrorists)
+            List<Terrorist> waitingList = new List<Terrorist>(terrorists);
+            List<Terrorist> failedToStrike = new List<Terrorist>();
+            bool anyStrikeExecuted;
+            Dictionary<string, (int Fuel, int Ammo)> previousInventoryState = new Dictionary<string, (int, int)>();
+
+            do
             {
-                string Location = AMAN.GetLastLocation(terrorist);
-                IStrikeOptions strike = null;
+                anyStrikeExecuted = false;
 
-                if (Location.Contains("home"))
+                for (int i = 0; i < waitingList.Count; i++)
                 {
-                    strike = InventoryCheck("F16 Fighter Jet");
-                }
-                else if (Location.Contains("car"))
-                {
-                    strike = InventoryCheck("Hermes 460 (zik) Drone");
-                }
-                else if (Location.Contains("outside"))
-                {
-                    strike = InventoryCheck("M109 Artillery");
+                    Terrorist terrorist = waitingList[i];
+                    string location = AMAN.GetLastLocation(terrorist);
+                    IStrikeOptions strike = null;
+
+                    if (location.Contains("home"))
+                        strike = InventoryCheck("F16 Fighter Jet");
+                    else if (location.Contains("car"))
+                        strike = InventoryCheck("Hermes 460 (zik) Drone");
+                    else if (location.Contains("outside"))
+                        strike = InventoryCheck("M109 Artillery");
+
+                    if (strike != null && strike.IsAvailable())
+                    {
+                        strike.attack();
+                        terrorist.IsDied();
+                        Console.WriteLine($"Mission accomplished!");
+                        Console.WriteLine($"The terrorist {terrorist.GetName()} is alive? {terrorist.GetIsAlive()}");
+                        Console.WriteLine($"Strike used: {strike.Name} | ID: {strike.id}");
+                        Console.WriteLine($"Remaining Fuel: {strike.FuelSupplyGalon}, Remaining Ammo: {strike.AmmunitionCapacity}");
+                        Console.WriteLine("-----------------------------------------------------");
+
+                        Hamas.RemoveTerrorist(terrorist);
+                        waitingList.RemoveAt(i);
+                        i--;
+                        anyStrikeExecuted = true;
+                    }
+                    else
+                    {
+                        if (strike == null)
+                        {
+                            Console.WriteLine($"Unable to attack: No available strike unit for location '{location}'");
+                        }
+                        else if (!strike.IsAvailable())
+                        {
+                            Console.WriteLine($"Unable to attack: Strike unit '{strike.Name}' (ID: {strike.id}) is unavailable.");
+                            Console.WriteLine($"Fuel: {strike.FuelSupplyGalon}, Ammo: {strike.AmmunitionCapacity}");
+                        }
+                        Console.WriteLine("-----------------------------------------------------");
+                    }
                 }
 
-                if (strike != null && strike.IsAvailable())
+                // בדיקת שינויים במלאי
+                var currentInventory = new Dictionary<string, (int Fuel, int Ammo)>
+        {
+            { "F16 Fighter Jet", GetInventoryStatus("F16 Fighter Jet") },
+            { "Hermes 460 (zik) Drone", GetInventoryStatus("Hermes 460 (zik) Drone") },
+            { "M109 Artillery", GetInventoryStatus("M109 Artillery") }
+        };
+
+                bool inventoryChanged = false;
+                foreach (var kvp in currentInventory)
                 {
-                    strike.attack();
-                    terrorist.IsDied();
-                    Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.GetName()} is alive?\n{terrorist.GetIsAlive()}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining ammo stock: {strike.AmmunitionCapacity}");
-                    Hamas.RemoveTerrorist(terrorist);
+                    if (!previousInventoryState.ContainsKey(kvp.Key) ||
+                        previousInventoryState[kvp.Key] != kvp.Value)
+                    {
+                        inventoryChanged = true;
+                        break;
+                    }
                 }
-                else
+
+                if (!anyStrikeExecuted && !inventoryChanged)
                 {
-                    if (strike == null)
-                    {
-                        Console.WriteLine($"Unable to attack: No available strike unit for location '{Location}'");
-                    }
-                    else if (!strike.IsAvailable())
-                    {
-                        Console.WriteLine($"Unable to attack: Strike unit '{strike.Name}' (ID: {strike.id}) is unavailable.\nFuel: {strike.FuelSupplyGalon}, Ammo: {strike.AmmunitionCapacity}");
-                    }
+                    Console.WriteLine("No changes in inventory and no strikes executed. Stopping attempts.");
+                    break;
+                }
+
+                previousInventoryState = currentInventory;
+
+                if (!anyStrikeExecuted)
+                {
+                    Console.WriteLine("Waiting for inventory update before next attempt...");
+                    System.Threading.Thread.Sleep(2000);
+                }
+
+            } while (waitingList.Count > 0);
+
+            if (waitingList.Count > 0)
+            {
+                Console.WriteLine("Remaining terrorists after all attempts:");
+                foreach (var t in waitingList)
+                {
+                    Console.WriteLine($" - {t.GetName()}");
+                    failedToStrike.Add(t);
                 }
             }
+
+            return failedToStrike;
         }
+
+
+        /// <summary>
+        /// מחזירה את מצב המלאי (דלק ותחמושת) של יחידת תקיפה מסוימת.
+        /// אם אין יחידה זמינה – מוחזרת ברירת מחדל של אפס.
+        /// </summary>
+        private (int Fuel, int Ammo) GetInventoryStatus(string strikeName)
+        {
+            var strike = InventoryCheck(strikeName);
+
+            if (strike == null)
+                return (0, 0);
+
+            return ((int)strike.FuelSupplyGalon, strike.AmmunitionCapacity);
+        }
+
+
+
 
 
 

@@ -53,13 +53,14 @@ namespace IDF
                 Console.WriteLine("No intelligence messages found.");
                 return null;
             }
-                Dictionary<int, List<Terrorist>> temp = TargetPrioritizationDict();
-                int maxKey = temp.Keys.Max();
-                return temp[maxKey];
-            }
-        }
 
+            Dictionary<int, List<Terrorist>> temp = TargetPrioritizationDict();
+            int maxKey = temp.Keys.Max();
+            return temp[maxKey];
+        }
     }
+
+}
 
 
 

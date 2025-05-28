@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\commander console\\strategiccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\commander console\\strategiccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\aman\\aman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\aman\\aman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\simulatuon\\simulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\simulatuon\\simulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\strikeoptions\\strikeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\strikeoptions\\strikeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\commander console\\strategiccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\commander console\\strategiccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\strikeoptions\\f16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\strikeoptions\\f16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\strikeoptions\\m109 artillery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\strikeoptions\\m109 artillery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\hamasotganization\\hamas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +29,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\aman\\analize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\aman\\analize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\user\\source\\repos\\idf operation\\consoleapp1\\idf\\idf\\idforganization\\aman\\aman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\idforganization\\aman\\aman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|IDF||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
@@ -40,7 +52,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,46 +68,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "M109 Artillery.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\StrikeOptions\\M109 Artillery.cs",
+              "RelativeDocumentMoniker": "IDF\\IdfOrganization\\StrikeOptions\\M109 Artillery.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\StrikeOptions\\M109 Artillery.cs",
+              "RelativeToolTip": "IDF\\IdfOrganization\\StrikeOptions\\M109 Artillery.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T13:37:56.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StrikeInterface.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\StrikeOptions\\StrikeInterface.cs",
+              "RelativeDocumentMoniker": "IDF\\IdfOrganization\\StrikeOptions\\StrikeInterface.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\StrikeOptions\\StrikeInterface.cs",
+              "RelativeToolTip": "IDF\\IdfOrganization\\StrikeOptions\\StrikeInterface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T13:37:03.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "F16.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\StrikeOptions\\F16.cs",
+              "RelativeDocumentMoniker": "IDF\\IdfOrganization\\StrikeOptions\\F16.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\StrikeOptions\\F16.cs",
+              "RelativeToolTip": "IDF\\IdfOrganization\\StrikeOptions\\F16.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T13:36:29.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "StrategicControl.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\Commander Console\\StrategicControl.cs",
               "RelativeDocumentMoniker": "IDF\\IdfOrganization\\Commander Console\\StrategicControl.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\Commander Console\\StrategicControl.cs*",
-              "RelativeToolTip": "IDF\\IdfOrganization\\Commander Console\\StrategicControl.cs*",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAAAK0AAAARAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\Commander Console\\StrategicControl.cs",
+              "RelativeToolTip": "IDF\\IdfOrganization\\Commander Console\\StrategicControl.cs",
+              "ViewState": "AgIAACYBAAAAAAAAAAAAwDQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T08:53:54.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\Program.cs",
               "RelativeDocumentMoniker": "IDF\\Program.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\Program.cs",
               "RelativeToolTip": "IDF\\Program.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAFAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAAFAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T08:37:35.125Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Simulation.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\Simulatuon\\Simulation.cs",
               "RelativeDocumentMoniker": "IDF\\IdfOrganization\\Simulatuon\\Simulation.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\Simulatuon\\Simulation.cs",
-              "RelativeToolTip": "IDF\\IdfOrganization\\Simulatuon\\Simulation.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwDYAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\Simulatuon\\Simulation.cs*",
+              "RelativeToolTip": "IDF\\IdfOrganization\\Simulatuon\\Simulation.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T08:36:34.392Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Aman.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\AMAN\\Aman.cs",
               "RelativeDocumentMoniker": "IDF\\IdfOrganization\\AMAN\\Aman.cs",
@@ -108,33 +159,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Analize.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\AMAN\\Analize.cs",
               "RelativeDocumentMoniker": "IDF\\IdfOrganization\\AMAN\\Analize.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IdfOrganization\\AMAN\\Analize.cs",
               "RelativeToolTip": "IDF\\IdfOrganization\\AMAN\\Analize.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB0AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T08:10:35.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Hamas.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\HamasOtganization\\Hamas.cs",
               "RelativeDocumentMoniker": "IDF\\HamasOtganization\\Hamas.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\HamasOtganization\\Hamas.cs",
               "RelativeToolTip": "IDF\\HamasOtganization\\Hamas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T08:10:22.859Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "IDF",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\IDF Operation\\ConsoleApp1\\IDF\\IDF\\IDF.csproj",
               "RelativeDocumentMoniker": "IDF\\IDF.csproj",
