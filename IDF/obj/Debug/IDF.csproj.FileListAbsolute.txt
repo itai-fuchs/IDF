@@ -6,3 +6,10 @@ C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.csproj.CoreCompileInputs.cache
 C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.exe
 C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.pdb
 C:\Users\itai\source\repos\IDF\IDF\obj\Debug\IDF.exe.config
+C:\Users\User\source\repos\IDF Operation\ConsoleApp1\IDF\IDF\bin\Debug\IDF.exe.config
+C:\Users\User\source\repos\IDF Operation\ConsoleApp1\IDF\IDF\bin\Debug\IDF.exe
+C:\Users\User\source\repos\IDF Operation\ConsoleApp1\IDF\IDF\bin\Debug\IDF.pdb
+C:\Users\User\source\repos\IDF Operation\ConsoleApp1\IDF\IDF\obj\Debug\IDF.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\IDF Operation\ConsoleApp1\IDF\IDF\obj\Debug\IDF.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\IDF Operation\ConsoleApp1\IDF\IDF\obj\Debug\IDF.exe
+C:\Users\User\source\repos\IDF Operation\ConsoleApp1\IDF\IDF\obj\Debug\IDF.pdb

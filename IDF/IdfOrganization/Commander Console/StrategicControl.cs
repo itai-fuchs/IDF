@@ -162,7 +162,6 @@ namespace IDF
                 string Location = AMAN.GetLastLocation(terrorist);
                 IStrikeOptions strike = null;
 
-               ;
                 if (Location == "home")
                 {
                     strike = InventoryCheck("F16 Fighter Jet");
@@ -182,13 +181,62 @@ namespace IDF
                     terrorist.IsDied();
                     Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.GetName()} is alive?\n{terrorist.GetIsAlive()}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining fuel stock:{strike.AmmunitionCapacity}");
                     Hamas.RemoveTerrorist(terrorist);
-                    
+
 
 
                 }
                 else Console.WriteLine("Unable to attack");
             }
         }
+        public void StrikeExecutio()
+        {
+            List<Terrorist> mostdangerousTerrorists = Analize.GetMostDangerousTerrorists();
+
+            if (mostdangerousTerrorists == null || mostdangerousTerrorists.Count == 0)
+            {
+                Console.WriteLine("No dangerous terrorist found.");
+                return;
+            }
+
+            foreach (Terrorist terrorist in mostdangerousTerrorists)
+            {
+                string Location = AMAN.GetLastLocation(terrorist);
+                IStrikeOptions strike = null;
+
+                if (Location == "home")
+                {
+                    strike = InventoryCheck("F16 Fighter Jet");
+                }
+                else if (Location == "car")
+                {
+                    strike = InventoryCheck("Hermes 460 (zik) Drone");
+                }
+                else if (Location == "outside")
+                {
+                    strike = InventoryCheck("M109 Artillery");
+                }
+
+                if (strike != null && strike.IsAvailable())
+                {
+                    strike.attack();
+                    terrorist.IsDied();
+                    Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.GetName()} is alive?\n{terrorist.GetIsAlive()}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining ammo stock: {strike.AmmunitionCapacity}");
+                    Hamas.RemoveTerrorist(terrorist);
+                }
+                else
+                {
+                    if (strike == null)
+                    {
+                        Console.WriteLine($"Unable to attack: No available strike unit for location '{Location}'");
+                    }
+                    else if (!strike.IsAvailable())
+                    {
+                        Console.WriteLine($"Unable to attack: Strike unit '{strike.Name}' (ID: {strike.id}) is unavailable.\nFuel: {strike.FuelSupplyGalon}, Ammo: {strike.AmmunitionCapacity}");
+                    }
+                }
+            }
+        }
+
 
 
         public void CommanderMenu()
@@ -198,37 +246,41 @@ namespace IDF
             while (!exit)
             {
                 Console.WriteLine("=== COMANDOR MENUE ===");
-                Console.WriteLine("FOR STRIKE COLLECTION PLEASE PRESS 1");
-                Console.WriteLine("FOR THE TERRORIST COLLECTION BY RISK PLEASE PRESS 2");
-                Console.WriteLine("FOR THE MOST DENGEROUS TERRORIST PLEASE PRESS 3");
-                Console.WriteLine("FOR ALL TERRORISSTS LOCATION PLEASE PRESS  4");
-                Console.WriteLine("FOR ATTACK THE MOST DANGEROUS TERRORIST PLEASE PRESS 5");
+                Console.WriteLine("FOR THE TERRORIST WITH THE MOST INTELLIGENCE REPORTS 1");
+                Console.WriteLine("FOR STRIKE COLLECTION PLEASE PRESS 2");
+                Console.WriteLine("FOR THE TERRORIST COLLECTION BY RISK PLEASE PRESS 3");
+                Console.WriteLine("FOR THE MOST DENGEROUS TERRORIST PLEASE PRESS 4");
+                Console.WriteLine("FOR ALL TERRORISSTS LOCATION PLEASE PRESS  5");
+                Console.WriteLine("FOR ATTACK THE MOST DANGEROUS TERRORIST PLEASE PRESS 6");
                 Console.WriteLine("FOR EXIT PRESS 0\n");
-                
-                
+
 
                 string choice = Console.ReadLine();
 
                 switch (choice)
                 {
                     case "1":
-                        PrintStrikeAvailability();
+                        Console.WriteLine(AMAN.GetLatestMessageOfBiggestTerrorist());
                         break;
 
                     case "2":
-                        PrintTargetPrioritization();
+                        PrintStrikeAvailability();
                         break;
 
                     case "3":
-                        PrintMostDangerousTerrorists();
+                        PrintTargetPrioritization();
                         break;
 
                     case "4":
+                        PrintMostDangerousTerrorists();
+                        break;
+
+                    case "5":
                         PrintAllTerroristLocations();
                         break;
 
 
-                    case "5":
+                    case "6":
                         StrikeExecution();
                         break;
 

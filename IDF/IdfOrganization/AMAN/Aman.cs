@@ -11,7 +11,7 @@ namespace IDF_Operation___First_Strike.AMAN
 {
     internal class AMAN
     {
-        static Random rnd = new Random();
+        private static Random rnd = new Random();
 
         private Terrorist TerroristName;
         private DateTime Timestamp;
@@ -24,13 +24,20 @@ namespace IDF_Operation___First_Strike.AMAN
             TerroristName = Hamas.GetTerroristList()[rnd.Next(0, Hamas.GetTerroristList().Count-1)];
             Timestamp = DateTime.Now;
 
-            List<string> Locations = new List<string> { "home", "car", "outside" };
-            LastKnownLocation = Locations[rnd.Next(0, Locations.Count-1)];
+            Dictionary<string, List<string>> Locations = new Dictionary<string, List<string>> { ["home"] = new List<string> { "مخيم جباليا، زقاق رقم 5، بيت 17", "حي الشيخ رضوان، شارع المدارس، منزل رقم 55", "مخيم النصيرات، المنطقة B2، بيت عائلة الزويدي", "مخيم البريج، شارع السوق، منزل 23", "حي تل الزعتر، بجانب مدرسة العودة، بيت رقم 6", "حي الزيتون، شارع البستان، بيت 70", "شارع الثورة، حي الدرج، منزل رقم 9", "شارع النصر 49، الطابق الرابع، برج سبأ", "شارع حسن البنا، الطابق الأول، غزة", "شارع اليرموك، عمارة الأندلس، شقة 3", "شارع جمال عبد الناصر 88، الطابق الثاني، غزة", "شارع أحمد ياسين، عمارة القدس، غزة", "شارع حسن البنا، الطابق الأول، غزة", }, ["car"] = new List<string> { "شارع الوحدة 12، حي الرمال، غزة", "شارع صلاح الدين 220، شرق غزة", "شارع الكتيبة 73، وسط غزة", "شارع الصناعة 33، حي الصبرة، غزة", "شارع فلسطين، مقابل منتزه البلدية، غزة", "شارع بغداد، منطقة تل الهوا، غزة", "شارع بني عامر، حي الشعف، غزة", "شارع الإمام الشافعي، حي الزيتون، بيت 31", "مخيم دير البلح، شارع الوحدة، منزل 45", "شارع الكرامة، عمارة الريان، حي الرمال الجنوبي", }, ["outside"] = new List<string> { "شارع الشهداء 104، مبنى رقم 3، حي التفاح", "شارع أبو حصيرة 5، عمارة الأمل، غزة", "شارع عمر المختار 14، عمارة الفردوس، غزة", "شارع المغربي، قرب مستشفى الشفاء، غزة", "شارع البركة، قرب الجامعة الإسلامية، غزة", "شارع الثلاثيني، مقابل مسجد النور، غزة", "شارع خليل الوزير، برج العودة، غزة", "مخيم المغازي، شارع الجامع الكبير، غزة الوسطى", "حي تل الزعتر، بجانب مدرسة العودة، بيت رقم 6", "حي الزيتون، شارع البستان، بيت 70" } };
+            //Random category
+            List<string> keys = Locations.Keys.ToList();
+            string randomCategory = keys[rnd.Next(keys.Count)];
+            //Random address
+            List<string> addressList = Locations[randomCategory];
+            string randomAddress = addressList[rnd.Next(addressList.Count)];
+            LastKnownLocation = $"{randomCategory} \n\t address: {randomAddress}\n";
 
             ToDict();
         }
 
         private void ToDict()
+        //Adding the information to the SortedList, and preventing date conflicts
         {
             if (!IntelligenceMessages.ContainsKey(TerroristName))
             {
@@ -39,20 +46,29 @@ namespace IDF_Operation___First_Strike.AMAN
 
             SortedList<DateTime, string> terroristList = IntelligenceMessages[TerroristName];
 
-            while (terroristList.ContainsKey(Timestamp))
+            do
+            //Gives a random time and makes sure each message has a different date:
             {
-                Timestamp = Timestamp.AddMilliseconds(1);
+                Timestamp = Timestamp
+                    .AddSeconds(rnd.Next(0, 60))
+                    .AddMinutes(rnd.Next(0, 60))
+                    .AddHours(rnd.Next(0, 24))
+                    .AddDays(rnd.Next(0, 30))
+                    .AddMonths(rnd.Next(0, 4));
             }
+            while (terroristList.ContainsKey(Timestamp));
 
             terroristList.Add(Timestamp, LastKnownLocation);
         }
 
         public static Dictionary<Terrorist, SortedList<DateTime, string>> GetIntelligenceMessages()
+        //Returns IntelligenceMessages for analysis
         {
             return IntelligenceMessages;
         }
 
         public static string GetLatestMessageOfBiggestTerrorist()
+        // Returns the latest message of the terrorist who has the most messages.
         {
             Dictionary<Terrorist, SortedList<DateTime, string>> intelligenceMessages = AMAN.GetIntelligenceMessages();
 
@@ -60,7 +76,8 @@ namespace IDF_Operation___First_Strike.AMAN
             {
                 return "No intelligence data available.";
             }
-
+            
+            // Find the terrorist with the most messages and give his last one.
             Terrorist terroristWithMostMessages = null;
             int maxCount = 0;
 
@@ -80,7 +97,7 @@ namespace IDF_Operation___First_Strike.AMAN
                 DateTime latestTime = messages.Keys[lastIndex];
                 string latestLocation = messages.Values[lastIndex];
 
-                return $"Terrorist with the most messages: {terroristWithMostMessages.GetName()} Latest message time: {latestTime} Location:  {latestLocation}";
+                return $"Terrorist with the most messages:{terroristWithMostMessages.GetName()}\n\tLatest message time:{latestTime}\n\tLocation:  {latestLocation}";
             }
             else
             {
@@ -106,41 +123,6 @@ namespace IDF_Operation___First_Strike.AMAN
 
             DateTime latestTime = messages.Keys[messages.Count - 1];
             return messages[latestTime];
-        }
-
-        
-        public static void GenerateIntelligence()
-        {
-            
-            foreach (Terrorist terrorist in Hamas.GetTerroristList())
-            {
-                DateTime timestamp = DateTime.Now;
-
-                List<string> Locations = new List<string> { "home", "car", "outside" };
-                string location = Locations[rnd.Next(0, Locations.Count)];
-
-                if (!IntelligenceMessages.ContainsKey(terrorist))
-                {
-                    IntelligenceMessages[terrorist] = new SortedList<DateTime, string>();
-                }
-
-                SortedList<DateTime, string> terroristList = IntelligenceMessages[terrorist];
-
-                while (terroristList.ContainsKey(timestamp))
-                {
-                    timestamp = timestamp.AddMilliseconds(1);
-                }
-
-                terroristList.Add(timestamp, location);
-            }
-
-           
-            int extraMessages = rnd.Next(10, 20);
-
-            for (int i = 0; i < extraMessages; i++)
-            {
-                new AMAN(); 
-            }
         }
     }
 }

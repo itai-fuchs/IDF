@@ -43,9 +43,15 @@ namespace IDF
 
         }
         //method that Generates Generate 10–20 random intelligence messages.
+        public void InitializingMessagesList()
+        {
+            Random random = new Random();
 
-        
-
+            for (int i = 0; i <= random.Next(10, 100); i++)
+            {
+                AMAN aMAN = new AMAN();
+            }
+        }
     }
 }
 
