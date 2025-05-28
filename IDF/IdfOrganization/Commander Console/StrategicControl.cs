@@ -148,47 +148,8 @@ namespace IDF
         /// <summary>
         /// attack method
         /// </summary>
-        public void StrikeExecution()
-        {
-            List<Terrorist> mostdangerousTerrorists = Analize.GetMostDangerousTerrorists();
 
-            if (mostdangerousTerrorists == null)
-            {
-                Console.WriteLine("No dangerous terrorist found.");
-                return;
-            }
-            foreach (Terrorist terrorist in mostdangerousTerrorists)
-            {
-                string Location = AMAN.GetLastLocation(terrorist);
-                IStrikeOptions strike = null;
-
-                if (Location == "home")
-                {
-                    strike = InventoryCheck("F16 Fighter Jet");
-                }
-                else if (Location == "car")
-                {
-                    strike = InventoryCheck("Hermes 460 (zik) Drone");
-                }
-                else if (Location == "outside")
-                {
-                    strike = InventoryCheck("M109 Artillery");
-                }
-
-                if (strike != null && strike.IsAvailable())
-                {
-                    strike.attack();
-                    terrorist.IsDied();
-                    Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.GetName()} is alive?\n{terrorist.GetIsAlive()}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining fuel stock:{strike.AmmunitionCapacity}");
-                    Hamas.RemoveTerrorist(terrorist);
-
-
-
-                }
-                else Console.WriteLine("Unable to attack");
-            }
-        }
-        public void StrikeExecutio()
+        public void StrikeExecution()//משופר
         {
             List<Terrorist> mostdangerousTerrorists = Analize.GetMostDangerousTerrorists();
 
@@ -203,15 +164,15 @@ namespace IDF
                 string Location = AMAN.GetLastLocation(terrorist);
                 IStrikeOptions strike = null;
 
-                if (Location == "home")
+                if (Location.Contains("home"))
                 {
                     strike = InventoryCheck("F16 Fighter Jet");
                 }
-                else if (Location == "car")
+                else if (Location.Contains("car"))
                 {
                     strike = InventoryCheck("Hermes 460 (zik) Drone");
                 }
-                else if (Location == "outside")
+                else if (Location.Contains("outside"))
                 {
                     strike = InventoryCheck("M109 Artillery");
                 }
