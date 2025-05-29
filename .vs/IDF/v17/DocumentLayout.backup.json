@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|C:\\Users\\itai\\source\\repos\\IDF\\idf\\giminy feutre\\api_key.env||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\giminy feutre\\api_key.env||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|c:\\users\\itai\\source\\repos\\idf\\idf\\giminy feutre\\consoleinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\giminy feutre\\consoleinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|C:\\Users\\itai\\source\\repos\\IDF\\idf\\giminy feutre\\api_key.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|solutionrelative:idf\\giminy feutre\\api_key.env||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1406170-A9F1-4F65-B2BB-BAB12D120163}|IDF\\IDF.csproj|C:\\Users\\itai\\source\\repos\\IDF\\idf\\giminy feutre\\geminiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,13 +102,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ConsoleInterface.cs",
               "DocumentMoniker": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\Giminy feutre\\ConsoleInterface.cs",
               "RelativeDocumentMoniker": "IDF\\Giminy feutre\\ConsoleInterface.cs",
               "ToolTip": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\Giminy feutre\\ConsoleInterface.cs",
               "RelativeToolTip": "IDF\\Giminy feutre\\ConsoleInterface.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T12:33:46.14Z",
               "EditorCaption": ""
@@ -147,7 +147,7 @@
               "RelativeDocumentMoniker": "IDF\\Program.cs",
               "ToolTip": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\Program.cs",
               "RelativeToolTip": "IDF\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBUAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T08:44:34.098Z",
               "EditorCaption": ""
@@ -167,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "api_key.env",
               "DocumentMoniker": "C:\\Users\\itai\\source\\repos\\IDF\\IDF\\Giminy feutre\\api_key.env",
               "RelativeDocumentMoniker": "IDF\\Giminy feutre\\api_key.env",
