@@ -20,7 +20,7 @@ namespace IDF
         /// </summary>
         public void PrintStrikeAvailability()
         {
-            foreach (KeyValuePair<string, List<IStrikeOptions>> kvp in Static_IDF.GetStrikeDict())
+            foreach (KeyValuePair<string, List<IStrikeOptions>> kvp in Idf.GetStrikeDict())
             {
                 string toolName = kvp.Key;
                 List<IStrikeOptions> tools = kvp.Value;
@@ -77,7 +77,7 @@ namespace IDF
                 Console.WriteLine($"Risk Level: {riskLevel} - Count: {terrorists.Count}");
                 foreach (Terrorist terrorist in terrorists)
                 {
-                    Console.WriteLine($"  - {terrorist.GetName()}, Rank: {terrorist.GetRank()}, Alive: {terrorist.GetIsAlive()}");
+                    Console.WriteLine($"  - {terrorist.Name}, Rank: {terrorist.Rank}, Alive: {terrorist.IsAlive}");
                 }
                 Console.WriteLine();
             }
@@ -103,7 +103,7 @@ namespace IDF
                 Terrorist terrorist = pair.Key;
                 SortedList<DateTime, string> messages = pair.Value;
 
-                Console.WriteLine($"Terrorist: {terrorist.GetName()}");
+                Console.WriteLine($"Terrorist: {terrorist.Name}");
 
                 foreach (var message in messages)
                 {
@@ -123,7 +123,7 @@ namespace IDF
 
         private IStrikeOptions InventoryCheck(string unitKey)
         {
-            List<IStrikeOptions> unitList = Static_IDF.GetStrikeDict()[unitKey];
+            List<IStrikeOptions> unitList = Idf.GetStrikeDict()[unitKey];
 
             foreach (IStrikeOptions strike in unitList)
             {
@@ -179,8 +179,8 @@ namespace IDF
                 if (strike != null && strike.IsAvailable())
                 {
                     strike.Attack();
-                    terrorist.IsDied();
-                    Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.GetName()} is alive?\n{terrorist.GetIsAlive()}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining fuel stock:{strike.AmmunitionCapacity}");
+                    terrorist.IsAlive=false;
+                    Console.WriteLine($"Mission accomplished\n\nthe terrorist {terrorist.Name} is alive?\n{terrorist.IsAlive}\n\nStrike attack : {strike.Name}: {strike.id}\nRemaining fuel stock: {strike.FuelSupplyGalon}\nRemaining fuel stock:{strike.AmmunitionCapacity}");
                     Hamas.RemoveTerrorist(terrorist);
                     
 

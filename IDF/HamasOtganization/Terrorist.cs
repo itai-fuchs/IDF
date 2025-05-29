@@ -18,19 +18,16 @@ namespace IDF
         private static Random random = new Random();
 
         //name
-        private string Name;
-        public string GetName() { return Name; }
+        public string Name { get; set; }
+       
 
         //rank
-        private int Rank;
-        public int GetRank() { return Rank; }
+        public int Rank { get; set; }
+       
 
         //is alive
-        private bool IsAlive;
-        public bool GetIsAlive() { return IsAlive; }
-        public void IsDied() { IsAlive = false; }
-
-
+        public bool IsAlive {  get; set; }
+       
 
         //making terorist weaponsList.
         List<string> Weapons = new List<string> { };
@@ -70,8 +67,8 @@ namespace IDF
 
         public override string ToString()
         {
-            return $"NAME: {GetName()}\n" +
-                $"RANK: {GetRank()}\n" +
+            return $"NAME: {Name}\n" +
+                $"RANK: {Rank}\n" +
                 $"WEAPONS:\n{GetWeaponsStr()}";
         }
 

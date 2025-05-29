@@ -80,7 +80,7 @@ namespace IDF_Operation___First_Strike.AMAN
                 DateTime latestTime = messages.Keys[lastIndex];
                 string latestLocation = messages.Values[lastIndex];
 
-                return $"Terrorist with the most messages: {terroristWithMostMessages.GetName()} Latest message time: {latestTime} Location:  {latestLocation}";
+                return $"Terrorist with the most messages: {terroristWithMostMessages.Name} Latest message time: {latestTime} Location:  {latestLocation}";
             }
             else
             {

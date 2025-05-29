@@ -13,13 +13,12 @@ using System.Threading.Tasks;
 internal static class Hamas
 {
     //formation_date
-    private static string FormationDate = "10/12/1987";
-    public static string  GetFormationDate() { return FormationDate; }
+    public static string FormationDate { get; set; } = "10/12/1987";
 
 
     //Current_commander
-    private static string CurrentCommander = "Haled Mahshal";
-    public static void GetCurrentCommander() { Console.WriteLine(CurrentCommander);}
+    public static string CurrentCommander { get; set; } = "Haled Mahshal";
+
 
 
     //make Terrorist_list
@@ -42,8 +41,5 @@ internal static class Hamas
     {
         TerroristList.Remove(terrorist);
     }
-
- 
-
 
 }

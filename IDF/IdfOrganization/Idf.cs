@@ -7,17 +7,18 @@ namespace IDF
     /// <summary>
     /// A static IDF department contains a dictionary of attack tools.
     /// </summary>
-    internal static class Static_IDF
+    internal static class Idf
     {
         // formation_date
 
-        private static string FormationDate = "26/05/1948";
-        public static string  GetFormationDate() {return FormationDate;}
+        public static string FormationDate { get; set; } = "26/05/1948";
+
+
 
 
         // Current_commander
-        private static string CurrentCommander = "Eyal zamir";
-        public static string GetCurrentCommander() { return CurrentCommander; }
+      public static string CurrentCommander { get; set; } = "Eyal zamir";
+      
 
 
         //// make dict of strike option

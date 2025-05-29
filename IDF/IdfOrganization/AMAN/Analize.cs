@@ -23,7 +23,7 @@ namespace IDF
             foreach (Terrorist terrorist in Hamas.GetTerroristList())
             {
                 int qualityScore = 0;
-                if (terrorist.GetIsAlive())
+                if (terrorist.IsAlive)
                 {
                     foreach (string weapon in terrorist.GetWeapons())
                     {
@@ -32,7 +32,7 @@ namespace IDF
                         else if (weapon == "gun") qualityScore += 2;
                         else qualityScore += 3;
                     }
-                    qualityScore = terrorist.GetRank() * qualityScore;
+                    qualityScore = terrorist.Rank * qualityScore;
                     if (!ListedByRiskLevel.ContainsKey(qualityScore))
                     {
                         ListedByRiskLevel[qualityScore] = new List<Terrorist>();
